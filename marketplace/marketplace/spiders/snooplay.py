@@ -19,7 +19,7 @@ class SnooplaySpider(CrawlSpider):
     }
 
     def enable_impersonate(self, request, response):
-        request.meta["impersonate"] = "chrome110"
+        request.meta["impersonate"] = "edge99"
         return request
     
     rules = [
@@ -54,7 +54,7 @@ class SnooplaySpider(CrawlSpider):
         # filepath: c:\Users\rjriz\freelance\marketplace_ Competitive\marketplace\marketplace\spiders\snooplay.py
         title = response.css("h1.product-single__title::text").get()
         if not title:
-            self.logger.warning(f"Title not found for URL: {response.url}")
+            #elf.logger.warning(f"Title not found for URL: {response.url}")
             return
         
         product_price = response.css("span.product__price::text").get()
